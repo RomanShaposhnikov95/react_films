@@ -1,0 +1,11 @@
+.stars {
+    font-size: 30px;
+    color: gold;
+}
+
+.starsJust {
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+}
+

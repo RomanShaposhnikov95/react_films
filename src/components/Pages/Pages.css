@@ -1,0 +1,31 @@
+.notFound {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.errorNum {
+    font-size: 130px;
+    color: white;
+}
+
+.errorDescription {
+    font-size: 50px;
+    color: white;
+}
+
+.backToGeneral {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.serverError {
+    width: 30%;
+}
+
+.serverErrorImg {
+    width: 100%;
+}

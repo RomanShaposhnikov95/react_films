@@ -1,0 +1,77 @@
+.filmInfo {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 10px;
+    opacity: 0.9;
+}
+
+.filmInfoPoster {
+    width: 49%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filInfoImg {
+    width: 70%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.Info {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.infoTitle {
+    font-size: 50px;
+    color: white;
+}
+
+.description {
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.raiting {
+    width: 100%;
+    display: flex;
+    color: white;
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.video {
+    margin-top: 20px;
+    width: 70%;
+    height: 250px;
+    background-color: gray;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+/*@media only screen and (max-width: 700px) {*/
+/*    .filmInfo {*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*    }*/
+/*    .filmInfoPoster {*/
+/*        width: 100%;*/
+/*    }*/
+/*    .filInfoImg {*/
+/*        width: 100%;*/
+/*    }*/
+/*    .Info {*/
+/*        width: 100%;*/
+/*    }*/
+/*    .video {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/

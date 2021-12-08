@@ -1,0 +1,45 @@
+.film {
+    position: relative;
+    width: 250px;
+    border: 2px solid gray;
+    border-radius: 7px;
+    background-color: black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.film:hover {
+    border: 2px solid white;
+}
+
+.filmImg {
+    width: 100%;
+    object-fit: cover;
+}
+
+.filmTitle {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.raitingBlock {
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #efd341;
+}

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import {Header} from "./components/Header/Header";
+import {Slider} from "./components/Slider/Slider";
+import {AllFilms} from "./components/AllFIlms/AllFilms";
+import {FilmInfo} from "./components/FilmInfo/FilmInfo";
+import {NotFound} from "./components/Pages/NotFound";
+import {Preloader} from "./components/Preloader/Preloader";
+import {ServerError} from "./components/Pages/ServerError";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="appContainer">
+          <Header/>
+          <Slider title={'Top 250'}/>
+          <Slider title={'Top 100'}/>
+          <Slider title={'Top Await'}/>
+          {/*<AllFilms/>*/}
+          {/*<FilmInfo/>*/}
+          {/*<NotFound/>*/}
+          {/*<Preloader/>*/}
+          {/*<ServerError/>*/}
+      </div>
     </div>
   );
 }

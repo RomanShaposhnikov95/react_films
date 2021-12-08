@@ -57,21 +57,21 @@
     border-radius: 5px;
 }
 
-/*@media only screen and (max-width: 700px) {*/
-/*    .filmInfo {*/
-/*        flex-direction: column;*/
-/*        align-items: center;*/
-/*    }*/
-/*    .filmInfoPoster {*/
-/*        width: 100%;*/
-/*    }*/
-/*    .filInfoImg {*/
-/*        width: 100%;*/
-/*    }*/
-/*    .Info {*/
-/*        width: 100%;*/
-/*    }*/
-/*    .video {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
+@media only screen and (max-width: 700px) {
+    .filmInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filmInfoPoster {
+        width: 100%;
+    }
+    .filInfoImg {
+        width: 100%;
+    }
+    .Info {
+        width: 100%;
+    }
+    .video {
+        width: 100%;
+    }
+}

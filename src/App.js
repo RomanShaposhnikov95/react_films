@@ -6,22 +6,19 @@ import {FilmInfo} from "./components/FilmInfo/FilmInfo";
 import {NotFound} from "./components/Pages/NotFound";
 import {Preloader} from "./components/Preloader/Preloader";
 import {ServerError} from "./components/Pages/ServerError";
+import {Route, Routes} from "react-router-dom";
+import {HomePage} from "./components/HomePage/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <div className="appContainer">
-          <Header/>
-          <Slider title={'Top 250'}/>
-          <Slider title={'Top 100'}/>
-          <Slider title={'Top Await'}/>
-          {/*<AllFilms/>*/}
-          {/*<FilmInfo/>*/}
-          {/*<NotFound/>*/}
-          {/*<Preloader/>*/}
-          {/*<ServerError/>*/}
-      </div>
-    </div>
+      <Routes>
+          <Route path='/' element={<Header/>}>
+              <Route index element={<HomePage/>}/>
+              <Route path='*' element={<NotFound/>}/>
+              <Route path='/films' element={<AllFilms/>}/>
+              <Route path='/about' element={<FilmInfo/>}/>
+          </Route>
+      </Routes>
   );
 }
 

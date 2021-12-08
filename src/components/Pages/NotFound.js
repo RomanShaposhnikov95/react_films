@@ -1,4 +1,5 @@
 import './Pages.css'
+import {Link} from "react-router-dom";
 
 
 export const NotFound = () => {
@@ -6,7 +7,7 @@ export const NotFound = () => {
         <div className='notFound'>
             <h1 className='errorNum'>404</h1>
             <p className='errorDescription'>Page Not Found</p>
-            <div className="backToGeneral">Back To General</div>
+            <Link to='/' className="backToGeneral">Back To General</Link>
         </div>
     )
 }

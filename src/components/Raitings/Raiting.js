@@ -17,6 +17,11 @@ export const Raiting = (props) => {
 
 const Stars = (props) => {
     return (
-        <span onClick={() => {props.onClick(props.value)}}>{props.color ? <RiStarSFill className='stars'/> : <RiStarSLine className='starsJust'/>}</span>
+        <span onClick={() => {props.onClick(props.value)}}>
+            {props.color ?
+                <RiStarSFill className='stars'/>
+                :
+                <RiStarSLine className='starsJust'/>}
+        </span>
     )
 }

@@ -2,14 +2,18 @@ import './Film.css'
 import {Link} from "react-router-dom";
 
 
-const url = 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/snh_online_6072x9000_posed_01.jpg'
 
-export const Film = () => {
+export const Film = (props) => {
+    const {posterUrl,nameEn,rating,filmId} = props
+
+    const str = String(rating)
+    const procentToNum = str.includes("%") ? rating.slice(0,2) / 10 : rating
+
     return (
-        <Link to='/about' className="film">
-            <img className='filmImg' src={url} alt=""/>
-            <div className="filmTitle">Spiderman 3</div>
-            <div className="raitingBlock">99</div>
+        <Link to={`/about/${filmId}`} className="film">
+            <img className='filmImg' src={posterUrl} alt=""/>
+            <div className="filmTitle">{nameEn ? nameEn.slice(0,15) : 'no name'}</div>
+            <div className={procentToNum >= 9 ? "raitingBlock goldRaiting" : "raitingBlock"}>{procentToNum}</div>
         </Link>
     )
 }

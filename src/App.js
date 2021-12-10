@@ -1,13 +1,13 @@
 import './App.css';
 import {Header} from "./components/Header/Header";
-import {Slider} from "./components/Slider/Slider";
-import {AllFilms} from "./components/AllFIlms/AllFilms";
-import {FilmInfo} from "./components/FilmInfo/FilmInfo";
-import {NotFound} from "./components/Pages/NotFound";
-import {Preloader} from "./components/Preloader/Preloader";
-import {ServerError} from "./components/Pages/ServerError";
 import {Route, Routes} from "react-router-dom";
-import {HomePage} from "./components/HomePage/HomePage";
+import {lazy} from "react";
+
+const AllFilms = lazy(() => import("./components/AllFIlms/AllFilms"));
+const FilmInfo = lazy(() => import("./components/FilmInfo/FilmInfo"));
+const NotFound = lazy(() => import("./components/Pages/NotFound"));
+const HomePage = lazy(() => import("./components/HomePage/HomePage"));
+
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
           <Route path='/' element={<Header/>}>
               <Route index element={<HomePage/>}/>
               <Route path='*' element={<NotFound/>}/>
-              <Route path='/films' element={<AllFilms/>}/>
-              <Route path='/about' element={<FilmInfo/>}/>
+              <Route path='/films/:category/:num' element={<AllFilms/>}/>
+              <Route path='/about/:id' element={<FilmInfo/>}/>
           </Route>
       </Routes>
   );

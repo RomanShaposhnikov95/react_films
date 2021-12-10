@@ -5,6 +5,8 @@
 
 .sliderGeneralTitle {
     color: white;
+    display: flex;
+    align-items: center;
 }
 
 .slider {
@@ -13,13 +15,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /*overflow-x: scroll;*/
 }
-
-/*.slider::-webkit-scrollbar {*/
-/*    display: none;*/
-/*}*/
-
 
 .slide {
     min-width: 200px;
@@ -35,6 +31,8 @@
 
 .slideImg {
     width: 100%;
+    min-height: 300px;
+    max-height: 300px;
     object-fit: cover;
 }
 
@@ -60,4 +58,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.next {
+    color: white;
+    background-color: white;
+    font-size: 50px;
+    margin-left: 10px;
 }

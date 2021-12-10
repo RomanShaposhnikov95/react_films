@@ -1,30 +1,59 @@
 import './FilmInfo.css'
 import {Raiting} from "../Raitings/Raiting";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchOneFilm} from "../../redux/FilmsArrSlice";
+import {Preloader} from "../Preloader/Preloader";
 
 
-const url = 'https://terrigen-cdn-dev.marvel.com/content/prod/1x/snh_online_6072x9000_posed_01.jpg'
+const FilmInfo = () => {
+    const {id} = useParams();
+    const dispatch = useDispatch();
+    const {filmInfo,loading} = useSelector(state => state.allFilms)
 
-export const FilmInfo = () => {
+    useEffect(() => {
+        dispatch(fetchOneFilm(id))
+    },[id, dispatch])
 
-    const [rating, setRating] = useState(0)
+    const {posterUrl,ratingKinopoisk,nameOriginal,description} = filmInfo
+    const result = Math.floor(ratingKinopoisk / 2)
+    const [rating, setRating] = useState(result)
+
+    const renderFilms = (filmInfo, loading) => {
+        if (loading === 'loading') {
+            return <Preloader/>
+        } else if (loading === "error") {
+            return <p>Loading error</p>
+        }
+        
+        if (filmInfo) {
+            return (
+                <>
+                    <div className="filmInfoPoster">
+                        <img src={posterUrl} alt={posterUrl} className="filInfoImg"/>
+                    </div>
+                    <div className="Info">
+                        <div className="infoTitle">{nameOriginal}</div>
+                        <div className="description">{description}</div>
+                        <div className="raiting">
+                            <Raiting valueFromSer={rating} onClick={setRating}/>
+                            <span>{ratingKinopoisk}</span>
+                        </div>
+                        <div className="video"></div>
+                    </div>
+                </>
+            )
+        }
+    }
+
+    const elements = renderFilms(filmInfo, loading)
 
     return (
         <div className='filmInfo'>
-            <div className="filmInfoPoster">
-                <img src={url} alt="" className="filInfoImg"/>
-            </div>
-            <div className="Info">
-                <div className="infoTitle">Spiderman 3</div>
-                <div className="description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Animi aut consequuntur doloremque dolores eius eum eveniet
-                    harum ipsum itaque iusto modi nesciunt nostrum, quam quas
-                    quidem repellendus totam vitae voluptas!
-                </div>
-                <div className="raiting"><Raiting valueFromSer={rating} onClick={setRating}/><span>7.2</span></div>
-                <div className="video"></div>
-            </div>
+            {elements}
         </div>
     )
 }
+
+export default FilmInfo;

@@ -9,13 +9,14 @@ import {GrFormNextLink} from "react-icons/all";
 
 export const Slider = (props) => {
     const {top,info} = props
+    const arr = top.slice(0,9)
 
     return (
         <div className='sliderWrapper'>
             <Link to={`/films/${info}/${1}`} className='sliderGeneralTitle'><h1>{props.title}</h1><GrFormNextLink className='next'/></Link>
             <Swiper slidesPerView={"auto"}  className='slider'>
                 {
-                    top.map((el, index) => (
+                    arr.map((el, index) => (
                         <SwiperSlide key={index} className="slide">
                             <Slide key={index} {...el}/>
                         </SwiperSlide>

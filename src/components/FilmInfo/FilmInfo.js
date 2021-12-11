@@ -1,7 +1,7 @@
 import './FilmInfo.css'
 import {Raiting} from "../Raitings/Raiting";
 import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchOneFilm} from "../../redux/FilmsArrSlice";
 import {Preloader} from "../Preloader/Preloader";
@@ -10,7 +10,11 @@ import {Preloader} from "../Preloader/Preloader";
 const FilmInfo = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
-    const {filmInfo,loading} = useSelector(state => state.allFilms)
+    const {filmInfo,filmsLoadingStatus} = useSelector(state => state.allFilms)
+    const navigate = useNavigate();
+
+    const goBack = () => navigate(-1)
+
 
     useEffect(() => {
         dispatch(fetchOneFilm(id))
@@ -40,14 +44,15 @@ const FilmInfo = () => {
                             <Raiting valueFromSer={rating} onClick={setRating}/>
                             <span>{ratingKinopoisk}</span>
                         </div>
-                        <div className="video"></div>
+                        <div onClick={goBack} className='back'><p>&#8592; Back</p></div>
+                        {/*<Video source={"https://www.youtube.com/embed/JfVOs4VSpmA"}/>*/}
                     </div>
                 </>
             )
         }
     }
 
-    const elements = renderFilms(filmInfo, loading)
+    const elements = renderFilms(filmInfo, filmsLoadingStatus)
 
     return (
         <div className='filmInfo'>

@@ -1,0 +1,92 @@
+.searchWrapper {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.searchContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    font-size: 20px;
+    border: none;
+}
+
+.searchBtn {
+    padding: 7px;
+    background-color: #2196f3;
+    border: none;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.searchMenu {
+    padding: 10px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    position: absolute;
+    z-index: 2;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.searchItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.searchItem:first-child {
+    margin-top: 0;
+}
+
+.resultImg {
+    width: 70px;
+    max-height: 100px;
+    object-fit: cover;
+}
+.searchInfo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.searchTitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.searchYear {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.empty {
+    color: black;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,9 +1,10 @@
 
+const API_KEY = process.env.REACT_APP_API_KEY
 
 
 export const useHttp = () => {
     const request = async (url,method = 'GET', body = null, headers = {
-        'X-API-KEY': 'b941e349-41de-4f34-b160-6e0619897a3a',
+        'X-API-KEY': API_KEY,
         'Content-Type': 'application/json'
     }) => {
         try {

@@ -3,7 +3,7 @@ import {Raiting} from "../Raitings/Raiting";
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchOneFilm} from "../../redux/FilmsArrSlice";
+import {clearArr, fetchOneFilm} from "../../redux/FilmsArrSlice";
 import {Preloader} from "../Preloader/Preloader";
 
 
@@ -13,7 +13,10 @@ const FilmInfo = () => {
     const {filmInfo,filmsLoadingStatus} = useSelector(state => state.allFilms)
     const navigate = useNavigate();
 
-    const goBack = () => navigate(-1)
+    const goBack = () => {
+        navigate(-1)
+        dispatch(clearArr())
+    }
 
 
     useEffect(() => {
@@ -61,4 +64,4 @@ const FilmInfo = () => {
     )
 }
 
-export default FilmInfo;
+export default FilmInfo

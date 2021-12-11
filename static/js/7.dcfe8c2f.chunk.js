@@ -1,2 +1,0 @@
-(this.webpackJsonpreact_films=this.webpackJsonpreact_films||[]).push([[7],{65:function(e,c,s){"use strict";s.r(c),s.d(c,"NotFound",(function(){return t}));s(32);var r=s(11),n=s(2),t=function(){return Object(n.jsxs)("div",{className:"notFound",children:[Object(n.jsx)("h1",{className:"errorNum",children:"404"}),Object(n.jsx)("p",{className:"errorDescription",children:"Page Not Found"}),Object(n.jsx)(r.b,{to:"/",className:"backToGeneral",children:"Back To Home"})]})}}}]);
-//# sourceMappingURL=7.dcfe8c2f.chunk.js.map
